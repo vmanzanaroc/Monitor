@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "809809444341",
+    "project_id": "ecomonitor-2024",
+    "storage_bucket": "ecomonitor-2024.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:809809444341:android:a5d425261d9222b4c474bc",
+        "android_client_info": {
+          "package_name": "com.example.ecomonitor"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOwlxDjsWyuCNE5b0u5T7R1c0ZbL_2Jfs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
