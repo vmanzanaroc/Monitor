@@ -8,6 +8,13 @@
     android:background="#81D4FA"
     tools:context=".Register">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/backEcoMonitor"
+        android:alpha="0.5"
+        />
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="254dp"

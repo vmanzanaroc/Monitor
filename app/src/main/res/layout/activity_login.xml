@@ -5,8 +5,15 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#81D4FA"
+    android:visibility="visible"
     tools:context=".LoginActivity">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/backEcoMonitor"
+        android:alpha="0.5"
+        />
 
     <TextView
         android:id="@+id/textView"
@@ -68,7 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="0dp"
-                android:backgroundTint="#039BE5"
+                android:backgroundTint="#9ADEE8"
                 android:text="Registrar usuario"
                 android:textColor="#000000" />
 
@@ -80,7 +87,7 @@
                 android:id="@+id/login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#039BE5"
+                android:backgroundTint="#9ADEE8"
                 android:text="Iniciar sesión"
                 android:textColor="#000000" />
         </LinearLayout>
@@ -101,7 +108,7 @@
             android:layout_width="146dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="0dp"
-            android:backgroundTint="#039BE5"
+            android:backgroundTint="#9ADEE8"
             android:text="@string/volver"
             android:textColor="#000000" />
     </LinearLayout>

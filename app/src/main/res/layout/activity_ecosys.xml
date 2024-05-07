@@ -9,6 +9,13 @@
     android:translationZ="-10sp"
     tools:context=".ecoSys">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/backEcoMonitor"
+        android:alpha="0.5"
+        />
+
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="418dp"
@@ -88,7 +95,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
-                android:backgroundTint="#0288D1"
+                android:backgroundTint="#9ADEE8"
                 android:text="@string/eliminar_ecosistema"
                 android:textColor="#000000" />
 
@@ -100,7 +107,7 @@
                 android:id="@+id/button7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#0288D1"
+                android:backgroundTint="#9ADEE8"
                 android:text="@string/a_adir_ecosistema"
                 android:textColor="#000000" />
 
@@ -110,7 +117,7 @@
             android:id="@+id/logOutButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#0288D1"
+            android:backgroundTint="#9ADEE8"
             android:text="@string/cerrar_sesion"
             android:textColor="#000000" />
     </LinearLayout>
