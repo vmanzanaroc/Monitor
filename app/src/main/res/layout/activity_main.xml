@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animationCache="false"
-    android:background="@drawable/backecomonitor"
+    android:background="@drawable/fondo"
     android:clickable="false"
     tools:context=".MainActivity">
 

@@ -12,7 +12,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/backecomonitor"
+        android:background="@drawable/fondo"
         android:alpha="0.5"
         />
 
@@ -97,7 +97,7 @@
             android:gravity="center_horizontal"
             android:orientation="horizontal">
 
-
+            <!--
             <Button
                 android:id="@+id/button8"
                 android:layout_width="wrap_content"
@@ -118,7 +118,7 @@
                 android:backgroundTint="#9ADEE8"
                 android:text="@string/a_adir_ecosistema"
                 android:textColor="#000000" />
-
+            -->
 
         </LinearLayout>
 

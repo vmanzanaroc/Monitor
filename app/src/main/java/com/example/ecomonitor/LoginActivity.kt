@@ -4,11 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.material3.AlertDialog
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.analytics.FirebaseAnalytics
@@ -33,7 +31,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
 
-        val btn: Button = findViewById(R.id.back)
+        val btn: Button = findViewById(R.id.backT)
         btn.setOnClickListener{
 
             val intent:Intent = Intent(this, MainActivity:: class.java)
@@ -73,6 +71,8 @@ class LoginActivity : AppCompatActivity() {
                             showAlert()
                         }
                     }
+
+
             }
         }
 
@@ -89,6 +89,8 @@ class LoginActivity : AppCompatActivity() {
                             showAlert()
                         }
                     }
+
+
             }
         }
 

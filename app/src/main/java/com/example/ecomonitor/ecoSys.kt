@@ -29,12 +29,13 @@ class ecoSys : AppCompatActivity() {
         }
 
         val btn1: Button = findViewById(R.id.button5)
-        btn1.setOnClickListener{
-            val intent:Intent = Intent(this, Terrario:: class.java)
+        btn1.setOnClickListener {
+            val intent: Intent = Intent(this, Terrario::class.java)
             startActivity(intent)
         }
 
         sharedPreferences = getSharedPreferences("eco_sys_prefs", Context.MODE_PRIVATE)
+    }
 
         /*
         val btn2: Button = findViewById(R.id.logOutButton)
@@ -45,6 +46,7 @@ class ecoSys : AppCompatActivity() {
          */
 
 
+        /*
         val btnAdd: Button = findViewById(R.id.button7)
         val linearLayout: LinearLayout = findViewById(R.id.linearLayout) // Asegúrate de tener un ID para tu LinearLayout en el XML
 
@@ -114,4 +116,6 @@ class ecoSys : AppCompatActivity() {
             onBackPressed()
         }
     }
+
+         */
 }
