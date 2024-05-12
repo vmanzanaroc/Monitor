@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4FC3F7"
     android:translationZ="-10sp"
     tools:context=".ecoSys">
 
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/backEcoMonitor"
+        android:background="@drawable/backecomonitor"
         android:alpha="0.5"
         />
 
@@ -48,8 +48,7 @@
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="409dp"
-        android:layout_height="515dp"
-        android:background="#00BFA5"
+        android:layout_height="429dp"
         android:paddingTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,11 +83,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2">
 
+        <Button
+            android:id="@+id/logOutButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#9ADEE8"
+            android:text="@string/cerrar_sesion"
+            android:textColor="#000000" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="58dp"
             android:gravity="center_horizontal"
             android:orientation="horizontal">
+
 
             <Button
                 android:id="@+id/button8"
@@ -111,15 +119,9 @@
                 android:text="@string/a_adir_ecosistema"
                 android:textColor="#000000" />
 
+
         </LinearLayout>
 
-        <Button
-            android:id="@+id/logOutButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#9ADEE8"
-            android:text="@string/cerrar_sesion"
-            android:textColor="#000000" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

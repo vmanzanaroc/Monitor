@@ -11,7 +11,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/backEcoMonitor"
+        android:background="@drawable/backecomonitor"
         android:alpha="0.5"
         />
 
@@ -30,8 +30,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="377dp"
-        android:layout_height="233dp"
+        android:layout_width="409dp"
+        android:layout_height="251dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:paddingLeft="10dp"
@@ -44,7 +44,7 @@
         <EditText
             android:id="@+id/emailEditText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="58dp"
             android:layout_marginTop="20dp"
             android:ems="10"
             android:hint="@string/correo"
@@ -64,8 +64,8 @@
             android:textColorHint="#000000" />
 
         <LinearLayout
-            android:layout_width="343dp"
-            android:layout_height="wrap_content"
+            android:layout_width="337dp"
+            android:layout_height="84dp"
             android:gravity="center_horizontal"
             android:orientation="horizontal"
             android:paddingTop="20dp">

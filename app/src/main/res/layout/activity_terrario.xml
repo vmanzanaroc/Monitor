@@ -8,12 +8,103 @@
     tools:context=".Terrario">
 
     <View
+        android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/backEcoMonitor"
         android:alpha="0.5"
-        />
+        android:background="@drawable/backecomonitor"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="-264dp" />
 
+    <LinearLayout
+        android:layout_width="371dp"
+        android:layout_height="641dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view">
+
+        <TextView
+            android:id="@+id/tituloMonit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Variables de ecosistema"
+            android:textAlignment="center"
+            android:textSize="30dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Temperatura aire" />
+
+        <TextView
+            android:id="@+id/txtTempAire"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Cargando datos..." />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|center_horizontal"
+            android:text="CO2 en el aire" />
+
+        <TextView
+            android:id="@+id/txtCO2Aire"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Cargando datos..." />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Temperatura del agua" />
+
+        <TextView
+            android:id="@+id/txtTempAgua"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Cargando datos..." />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="PH del agua" />
+
+        <TextView
+            android:id="@+id/txtPHAgua"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Cargando datos..." />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
