@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package = "com.example.ecomonitor">
+    package="com.example.ecomonitor">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -17,24 +17,30 @@
         android:theme="@style/Theme.EcoMonitor"
         tools:targetApi="31">
         <activity
-            android:name="com.example.ecomonitor.Terrario"
+            android:name=".TerrarioFS"
             android:exported="false" />
         <activity
-            android:name="com.example.ecomonitor.Register"
+            android:name=".TerrarioFB"
+            android:exported="false" />
+        <activity
+            android:name=".Terrario"
+            android:exported="false" />
+        <activity
+            android:name=".Register"
             android:exported="false"
             android:label="@string/title_activity_register"
             android:launchMode="singleInstance"
             android:theme="@style/Theme.EcoMonitor" />
         <activity
-            android:name="com.example.ecomonitor.ecoSys"
+            android:name=".ecoSys"
             android:exported="false"
             android:launchMode="singleInstance" />
         <activity
-            android:name="com.example.ecomonitor.LoginActivity"
+            android:name=".LoginActivity"
             android:exported="false"
             android:launchMode="singleInstance" />
         <activity
-            android:name="com.example.ecomonitor.MainActivity"
+            android:name=".MainActivity"
             android:exported="true"
             android:launchMode="singleInstance">
             <intent-filter>

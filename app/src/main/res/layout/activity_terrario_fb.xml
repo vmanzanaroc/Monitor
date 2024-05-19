@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Terrario">
+    tools:context=".TerrarioFB">
 
     <View
         android:id="@+id/view"
@@ -46,7 +46,7 @@
             android:text="Temperatura aire" />
 
         <TextView
-            android:id="@+id/txtTempAire"
+            android:id="@+id/txtTempAireFB"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:gravity="center_horizontal|center_vertical"
@@ -64,7 +64,7 @@
             android:text="CO2 en el aire" />
 
         <TextView
-            android:id="@+id/txtCO2Aire"
+            android:id="@+id/txtCO2AireFB"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:gravity="center_horizontal|center_vertical"
@@ -82,7 +82,7 @@
             android:text="Temperatura del agua" />
 
         <TextView
-            android:id="@+id/txtTempAgua"
+            android:id="@+id/txtTempAguaFB"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:gravity="center_horizontal|center_vertical"
@@ -100,7 +100,7 @@
             android:text="PH del agua" />
 
         <TextView
-            android:id="@+id/txtPHAgua"
+            android:id="@+id/txtPHAguaFB"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:gravity="center_horizontal|center_vertical"

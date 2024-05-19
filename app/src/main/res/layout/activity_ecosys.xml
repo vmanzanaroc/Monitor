@@ -63,11 +63,39 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/tortugas"
                 android:layout_width="150dp"
                 android:layout_height="75dp"
-                android:text="Button"
-                android:textAlignment="center" />
+                android:backgroundTint="#69EA9F"
+                android:text="Tortugas"
+                android:textAlignment="center"
+                android:textColor="#000000" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="25dp" />
+
+            <Button
+                android:id="@+id/acuario"
+                android:layout_width="150dp"
+                android:layout_height="75dp"
+                android:backgroundTint="#5BCEDF"
+                android:text="Acuario"
+                android:textAlignment="center"
+                android:textColor="#000000" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="25dp" />
+
+            <Button
+                android:id="@+id/aves"
+                android:layout_width="150dp"
+                android:layout_height="75dp"
+                android:backgroundTint="#EDCF32"
+                android:text="Aves"
+                android:textAlignment="center"
+                android:textColor="#000000" />
 
         </LinearLayout>
     </ScrollView>
