@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.content.Context
+import android.widget.TextView
+import com.google.firebase.auth.FirebaseAuth
 
 class ecoSys : AppCompatActivity() {
 
@@ -30,7 +32,24 @@ class ecoSys : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val bundle = intent.extras
+        val email = bundle?.getString("email")
+
+        setup(email ?: "")
         sharedPreferences = getSharedPreferences("eco_sys_prefs", Context.MODE_PRIVATE)
+    }
+    private fun setup(email:String){
+        title = "Inicio"
+        val user: TextView = findViewById(R.id.username)
+        user.text = email
+
+        val logOutBtn: TextView = findViewById(R.id.logOutButton)
+        logOutBtn.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            onBackPressed()
+            val intent: Intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
     }
 
         /*
@@ -100,18 +119,6 @@ class ecoSys : AppCompatActivity() {
         val email: String? = bundle?.getString("email")
         setup(email ?: "")
     }
-
-    private fun setup(email:String){
-        title = "Inicio"
-        val user: TextView = findViewById(R.id.username)
-        user.text = email
-
-        val logOutBtn: TextView = findViewById(R.id.logOutButton)
-        logOutBtn.setOnClickListener {
-            FirebaseAuth.getInstance().signOut()
-            onBackPressed()
-        }
-    }
-
          */
+
 }
