@@ -4,6 +4,7 @@ package com.example.ecomonitor
 import java.sql.Connection
 import java.sql.DriverManager
 import java.sql.SQLException
+import java.util.Properties
 
 object MySQLConnection {
 
@@ -17,10 +18,16 @@ object MySQLConnection {
 
         var connection: Connection? = null
         println("Probando conexion")
+
+        val connectionProps = Properties()
+        connectionProps.put("user", user)
+        connectionProps.put("password", passwd)
         try {
-            Class.forName("com.mysql.jdbc.Driver")
-            connection = DriverManager.getConnection(URL, user, passwd)
+            //connection = DriverManager.getConnection(URL, user, passwd)
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            connection = DriverManager.getConnection("jdbc:"+ "mysql" + "://" + "127.0.0.1" + ":" + "3306" + "/" + "", connectionProps)
             println("Conexion establecida")
+
         } catch (e: SQLException) {
             e.printStackTrace()
         } catch (e: ClassNotFoundException) {
