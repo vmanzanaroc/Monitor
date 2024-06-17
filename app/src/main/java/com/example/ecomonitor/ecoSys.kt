@@ -28,7 +28,7 @@ class ecoSys : AppCompatActivity() {
 
         val btn1: Button = findViewById(R.id.tortugas)
         btn1.setOnClickListener {
-            val intent: Intent = Intent(this, TerrarioFS::class.java)
+            val intent: Intent = Intent(this, Terrario::class.java)
             startActivity(intent)
         }
 

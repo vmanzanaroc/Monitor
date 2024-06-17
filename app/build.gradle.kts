@@ -55,8 +55,7 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:32.8.1"))                             //conexion con la prataforma firebase
     implementation("com.google.firebase:firebase-analytics")                                        //conexion con firebase authority
     implementation("com.google.firebase:firebase-auth")                                             //conexion con firebase
-    implementation("com.google.firebase:firebase-firestore:25.0.0")
-    implementation(libs.androidx.core.ktx)
+    implementation("com.google.firebase:firebase-database")
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
@@ -68,7 +67,6 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    implementation(files("libs/mysql-connector-j-8.0.31.jar"))
     implementation(libs.firebase.database)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

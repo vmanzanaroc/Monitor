@@ -21,6 +21,13 @@
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": []
+        },
+        "firebase_database": {
+          "rules": {
+            ".read": "true",
+            ".write": "true"
+          },
+          "url": "https://ecomonitor-2024-default-rtdb.europe-west1.firebasedatabase.app/"
         }
       }
     }
