@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Estado cuando está seleccionado -->
+    <item android:state_checked="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#123628"/> <!-- Color de fondo cuando está activo -->
+            <stroke
+                android:width="2dp"
+                android:color="#000000"/> <!-- Borde oscuro -->
+            <corners android:radius="10dp"/> <!-- Bordes redondeados -->
+        </shape>
+    </item>
+    <!-- Estado cuando no está seleccionado -->
+    <item android:state_checked="false">
+        <shape android:shape="rectangle">
+            <solid android:color="#C4FEFF"/> <!-- Color de fondo cuando está inactivo -->
+            <stroke
+                android:width="1dp"
+                android:color="#000000"/> <!-- Borde oscuro -->
+            <corners android:radius="10dp"/> <!-- Bordes redondeados -->
+        </shape>
+    </item>
+</selector>

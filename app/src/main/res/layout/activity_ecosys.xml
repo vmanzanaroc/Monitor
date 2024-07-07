@@ -1,25 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:translationZ="-10sp"
-    tools:context=".ecoSys">
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/fondo"
-        android:alpha="0.5"
-        />
+    android:background="@drawable/background_1"
+    android:translationZ="10sp"
+    tools:context=".EcoSysActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="418dp"
-        android:layout_height="99dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,20 +22,47 @@
         <TextView
             android:id="@+id/titulo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
             android:layout_marginTop="10dp"
+            android:gravity="center"
             android:text="@string/estos_son_tus_ecosistemas"
             android:textAlignment="center"
+            android:textAllCaps="false"
             android:textColor="#000000"
             android:textSize="30sp" />
 
-        <TextView
-            android:id="@+id/username"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:text="TextView"
-            android:textAlignment="center"
-            android:textSize="20dp" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView"
+                android:textAlignment="center"
+                android:textSize="20dp" />
+
+
+            <Button
+                android:id="@+id/configureUsernameBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="left"
+                android:background="@drawable/ajustes"
+                android:onClick="changeUserName"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
     </LinearLayout>
 
     <ScrollView
@@ -62,40 +82,73 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/tortugas"
-                android:layout_width="150dp"
-                android:layout_height="75dp"
-                android:backgroundTint="#69EA9F"
-                android:text="Tortugas"
-                android:textAlignment="center"
-                android:textColor="#000000" />
-
-            <Space
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="25dp" />
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/acuario"
-                android:layout_width="150dp"
-                android:layout_height="75dp"
-                android:backgroundTint="#5BCEDF"
-                android:text="Acuario"
-                android:textAlignment="center"
-                android:textColor="#000000" />
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="30dp"
+                    android:text="Tortugas"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
 
-            <Space
+                <Button
+                    android:id="@+id/configureEcosysnameBtn"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="left|center_vertical"
+                    android:background="@drawable/ajustes"
+                    android:onClick="changeEcosysName"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="25dp" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/aves"
-                android:layout_width="150dp"
-                android:layout_height="75dp"
-                android:backgroundTint="#EDCF32"
-                android:text="Aves"
-                android:textAlignment="center"
-                android:textColor="#000000" />
+                <Button
+                    android:id="@+id/tortugas"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/custom_bttn"
+                    android:text="Variables actuales"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:cornerRadius="10dp" />
+
+                <Button
+                    android:id="@+id/historico"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/bttn_blue_background"
+                    android:text="Histórico"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:cornerRadius="10dp" />
+
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
@@ -103,7 +156,7 @@
     <LinearLayout
         android:id="@+id/linearLayout4"
         android:layout_width="388dp"
-        android:layout_height="106dp"
+        android:layout_height="50dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -114,41 +167,13 @@
         <Button
             android:id="@+id/logOutButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#9ADEE8"
+            android:layout_height="match_parent"
+            android:background="@drawable/custom_button3"
             android:text="@string/cerrar_sesion"
-            android:textColor="#000000" />
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
-
-            <!--
-            <Button
-                android:id="@+id/button8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
-                android:backgroundTint="#9ADEE8"
-                android:text="@string/eliminar_ecosistema"
-                android:textColor="#000000" />
-
-            <Space
-                android:layout_width="14dp"
-                android:layout_height="wrap_content" />
-
-            <Button
-                android:id="@+id/button7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#9ADEE8"
-                android:text="@string/a_adir_ecosistema"
-                android:textColor="#000000" />
-            -->
-
-        </LinearLayout>
 
     </LinearLayout>
 

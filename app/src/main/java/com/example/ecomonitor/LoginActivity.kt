@@ -1,5 +1,6 @@
 package com.example.ecomonitor
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -13,6 +14,7 @@ import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -31,23 +33,17 @@ class LoginActivity : AppCompatActivity() {
         }
 
 
-        val btn: Button = findViewById(R.id.backFS)
-        btn.setOnClickListener{
+        val backbtn: Button = findViewById(R.id.back)
+        backbtn.setOnClickListener{
 
             val intent:Intent = Intent(this, MainActivity:: class.java)
             startActivity(intent)
+            finish()
          }
-        /*
-        val btn1: Button = findViewById(R.id.login)
-        btn1.setOnClickListener{
-            //if (emailEditText.text.isNotEmpty() && editPassword.ext.isNotEmpty())
-            val intent1:Intent = Intent(this, ecoSys:: class.java)
-            startActivity(intent1)
-        }
-        */
+
         val btn2: Button = findViewById(R.id.register)
         btn2.setOnClickListener{
-            val intent2:Intent = Intent(this, Register:: class.java)
+            val intent2:Intent = Intent(this, RegisterActivity:: class.java)
             startActivity(intent2)
         }
 
@@ -108,10 +104,11 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun showEcosystems(email: String){
-        val ecoSysIntent:Intent = Intent(this, ecoSys:: class.java).apply {
+        val ecoSysIntent:Intent = Intent(this, EcoSysActivity:: class.java).apply {
             putExtra("email", email)
         }
         startActivity(ecoSysIntent)
+        finish()
     }
 
 }

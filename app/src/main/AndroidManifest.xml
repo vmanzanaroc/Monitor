@@ -17,22 +17,20 @@
         android:theme="@style/Theme.EcoMonitor"
         tools:targetApi="31">
         <activity
-            android:name=".TerrarioFS"
+            android:name=".HistoricoActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".TerrarioActivity"
             android:exported="false" />
         <activity
-            android:name=".TerrarioFB"
-            android:exported="false" />
-        <activity
-            android:name=".Terrario"
-            android:exported="false" />
-        <activity
-            android:name=".Register"
+            android:name=".RegisterActivity"
             android:exported="false"
             android:label="@string/title_activity_register"
             android:launchMode="singleInstance"
             android:theme="@style/Theme.EcoMonitor" />
         <activity
-            android:name=".ecoSys"
+            android:name=".EcoSysActivity"
             android:exported="false"
             android:launchMode="singleInstance" />
         <activity

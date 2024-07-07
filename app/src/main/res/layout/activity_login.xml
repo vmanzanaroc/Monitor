@@ -11,7 +11,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:alpha="0.5"
+        android:alpha="0.3"
         android:background="@drawable/fondo"
         />
 
@@ -23,6 +23,7 @@
         android:text="Login"
         android:textColor="#000000"
         android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -43,7 +44,7 @@
 
         <EditText
             android:id="@+id/emailEditText"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="58dp"
             android:layout_marginTop="20dp"
             android:ems="10"
@@ -54,7 +55,7 @@
 
         <EditText
             android:id="@+id/editPassword"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="58dp"
             android:layout_marginTop="20dp"
             android:ems="10"
@@ -75,9 +76,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="0dp"
-                android:backgroundTint="#9ADEE8"
+                android:background="@drawable/custom_bttn2"
                 android:text="Registrar usuario"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textStyle="bold" />
 
             <Space
                 android:layout_width="20dp"
@@ -87,9 +89,10 @@
                 android:id="@+id/login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#9ADEE8"
+                android:background="@drawable/custom_bttn"
                 android:text="Iniciar sesión"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 
@@ -104,13 +107,14 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <Button
-            android:id="@+id/backFS"
+            android:id="@+id/back"
             android:layout_width="146dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="0dp"
-            android:backgroundTint="#9ADEE8"
-            android:text="@string/volver"
-            android:textColor="#000000" />
+            android:background="@drawable/custom_button3"
+            android:text="SALIR"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
