@@ -124,6 +124,7 @@ class HistoricoActivity : AppCompatActivity() {
         backbtn.setOnClickListener {
             val intent = Intent(this, EcoSysActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         val clearbtn: Button = findViewById(R.id.clearData)

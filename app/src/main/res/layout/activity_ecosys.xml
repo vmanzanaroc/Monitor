@@ -11,8 +11,10 @@
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_8"
         android:orientation="vertical"
+        android:paddingBottom="20dp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +24,6 @@
             android:id="@+id/titulo"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:background="@drawable/background_8"
             android:gravity="center"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
@@ -39,7 +40,9 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
 
             <TextView
                 android:id="@+id/username"
@@ -48,6 +51,7 @@
                 android:layout_weight="1"
                 android:text=""
                 android:textAlignment="center"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp" />
 
 

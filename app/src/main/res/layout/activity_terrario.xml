@@ -51,10 +51,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -70,8 +70,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
                         android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
                         android:text="Temperatura aire (ºC)"
-                        android:textSize="16dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -79,6 +81,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_horizontal|center_vertical"
+                        android:paddingBottom="10dp"
                         android:text="..."
                         android:textSize="40sp" />
 
@@ -98,8 +101,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
                         android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
                         android:text="CO2 aire (ppm)"
-                        android:textSize="16dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -107,6 +112,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_horizontal|center_vertical"
+                        android:paddingBottom="10dp"
                         android:text="..."
                         android:textSize="40sp" />
                 </LinearLayout>
@@ -115,10 +121,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -134,8 +140,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
                         android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
                         android:text="Humedad aire (%)"
-                        android:textSize="16dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -143,6 +151,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_horizontal|center_vertical"
+                        android:paddingBottom="10dp"
                         android:text="..."
                         android:textSize="40sp" />
 
@@ -163,8 +172,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
                         android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
                         android:text="Partículas aire (ppb)"
-                        android:textSize="16dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -172,6 +183,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_horizontal|center_vertical"
+                        android:paddingBottom="10dp"
                         android:text="..."
                         android:textSize="40sp" />
                 </LinearLayout>
@@ -180,10 +192,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -199,8 +211,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
                         android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
                         android:text="Temperatura agua (ºC)"
-                        android:textSize="16dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -208,6 +222,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_horizontal|center_vertical"
+                        android:paddingBottom="10dp"
                         android:text="..."
                         android:textSize="40sp" />
                 </LinearLayout>
@@ -226,8 +241,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
                         android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
                         android:text="PH agua"
-                        android:textSize="16dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -235,6 +252,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_horizontal|center_vertical"
+                        android:paddingBottom="10dp"
                         android:text="..."
                         android:textSize="40sp" />
                 </LinearLayout>
