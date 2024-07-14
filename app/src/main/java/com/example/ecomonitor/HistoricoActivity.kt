@@ -42,25 +42,7 @@ class HistoricoActivity : AppCompatActivity() {
         val bundle = intent.extras
         val email = bundle?.getString("email")
         sharedPreferences = getSharedPreferences("eco_sys_prefs", Context.MODE_PRIVATE)
-
-
-        /*
-        bbddConnection.limitToLast(5).addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                val mediciones = mutableListOf<Medicion>()
-                for (data in snapshot.children) {
-                    val medicion = data.getValue(Medicion::class.java)
-                    medicion?.let { mediciones.add(it) }
-                }
-                updateUI(mediciones)
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                // Manejar errores
-            }
-        })
-         */
-
+        
 
         email?.let {
             bbddConnection.readFromStatic(it, { mediciones ->
@@ -72,7 +54,6 @@ class HistoricoActivity : AppCompatActivity() {
                 println(mediciones.component4().tempAire)
                 println(mediciones.component5().tempAire)
             }, {
-                // Manejar caso de no haber datos
             }, 5)
         }
 
@@ -174,14 +155,6 @@ class HistoricoActivity : AppCompatActivity() {
             findViewById<TextView>(R.id.textTA3).text = mediciones.getOrNull(2)?.tempAire.toString()
             findViewById<TextView>(R.id.textTA4).text = mediciones.getOrNull(1)?.tempAire.toString()
             findViewById<TextView>(R.id.textTA5).text = mediciones.getOrNull(0)?.tempAire.toString()
-
-            /*
-            findViewById<TextView>(R.id.textTA1).text = mediciones.getOrNull(4)?.tempAire.toString()
-            findViewById<TextView>(R.id.textTA2).text = mediciones.getOrNull(3)?.tempAire.toString()
-            findViewById<TextView>(R.id.textTA3).text = mediciones.getOrNull(2)?.tempAire.toString()
-            findViewById<TextView>(R.id.textTA4).text = mediciones.getOrNull(1)?.tempAire.toString()
-            findViewById<TextView>(R.id.textTA5).text = mediciones.getOrNull(0)?.tempAire.toString()
-            */
 
             findViewById<TextView>(R.id.textHA1).text = mediciones.getOrNull(4)?.humidity.toString()
             findViewById<TextView>(R.id.textHA2).text = mediciones.getOrNull(3)?.humidity.toString()

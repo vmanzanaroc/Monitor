@@ -5,8 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_1"
-    android:translationZ="10sp"
+    android:background="@drawable/fondoecosys"
     tools:context=".EcoSysActivity">
 
     <LinearLayout
@@ -23,12 +22,14 @@
             android:id="@+id/titulo"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:layout_marginTop="10dp"
+            android:background="@drawable/background_8"
             android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:text="@string/estos_son_tus_ecosistemas"
             android:textAlignment="center"
             android:textAllCaps="false"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textSize="30sp" />
 
         <LinearLayout
@@ -68,7 +69,9 @@
         android:id="@+id/scrollView2"
         android:layout_width="409dp"
         android:layout_height="429dp"
+        android:paddingLeft="10dp"
         android:paddingTop="20dp"
+        android:paddingRight="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,6 +81,7 @@
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/ecosistemas_background"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -89,7 +93,9 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingEnd="15dp">
 
                 <TextView
                     android:id="@+id/ecosysName"
@@ -100,7 +106,7 @@
                     android:paddingLeft="30dp"
                     android:text="Tortugas"
                     android:textAllCaps="false"
-                    android:textColor="#000000"
+                    android:textColor="#FFFFFF"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -119,7 +125,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp">
 
                 <Button
                     android:id="@+id/tortugas"

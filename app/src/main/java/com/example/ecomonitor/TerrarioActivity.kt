@@ -28,31 +28,22 @@ class TerrarioActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_terrario)
 
-        // Inicializa BBDDConnection
         bbddConnection = BBDDConnection()
 
-        // Configurar la referencia del usuario
-        //val email = "vicentemc2001@gmail.com"
-
-        //lectura del email
         val bundle = intent.extras
         val email = bundle?.getString("email")
         sharedPreferences = getSharedPreferences("eco_sys_prefs", Context.MODE_PRIVATE)
 
 
-        // Leer datos de la raíz del usuario
         email?.let {
             bbddConnection.readFromDinamic(it) { medicion: Medicion? ->
-                // Manejar el valor leído
                 medicion?.let {
                     try {
-                        // Actualizar los valores en tu interfaz de usuario
                         updateUI(medicion)
                     } catch (e: JSONException) {
                         e.printStackTrace()
                     }
                 } ?: run {
-                    // Manejar el caso en el que no se recibió ningún valor
                     println("No se recibió ningún valor")
                 }
             }
@@ -74,16 +65,13 @@ class TerrarioActivity : AppCompatActivity() {
 
         handler = Handler(Looper.getMainLooper())
 
-        // Iniciar la actualización periódica de los valores
         startUpdatingValues()
     }
 
     private fun startUpdatingValues() {
         handler.post(object : Runnable {
             override fun run() {
-                // Ejecutar la actualización de valores en un hilo secundario
                 GlobalScope.launch(Dispatchers.IO) {
-                    // Aquí ya no necesitas ejecutar updateValues() porque los datos se actualizan en tiempo real desde Firebase
                 }
             }
         })

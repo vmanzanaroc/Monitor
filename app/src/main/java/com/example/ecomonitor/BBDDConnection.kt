@@ -62,6 +62,28 @@ class BBDDConnection {
             }
     }
 
+    fun updateUserName(email: String, newUsername: String, onComplete: (Boolean) -> Unit) {
+        userRoot(email, "profile")
+        userRef.child("userName").addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()) {
+                    userRef.child("userName").setValue(newUsername)
+                        .addOnCompleteListener { task ->
+                            onComplete(task.isSuccessful)
+                        }
+                } else {
+                    onComplete(false)
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                println("Failed to read value: ${error.toException()}")
+                onComplete(false)
+            }
+        })
+    }
+
+
     fun readProfileData(email: String, onDataChange: (String?, String?) -> Unit) {
         userRoot(email, "profile")
         userRef.addListenerForSingleValueEvent(object : ValueEventListener {
@@ -72,11 +94,34 @@ class BBDDConnection {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                println("Failed to read value: ${error.toException()}")
+                println("Fallo al leer el valor: ${error.toException()}")
                 onDataChange(null, null)
             }
         })
     }
+
+
+    /*
+    fun readProfileData(email: String, onDataLoaded: (String, String) -> Unit) {
+        userRoot(email, "profile")
+        userRef.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()) {
+                    val username = snapshot.child("userName").getValue(String::class.java) ?: ""
+                    val ecosystemName = snapshot.child("terrario").getValue(String::class.java) ?: ""
+                    onDataLoaded(username, ecosystemName)
+                } else {
+                    onDataLoaded("", "")
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                println("Failed to read value: ${error.toException()}")
+                onDataLoaded("", "")
+            }
+        })
+    }
+     */
 
     private fun userRoot(email: String, child: String) {
         val username = email.substringBefore("@")
