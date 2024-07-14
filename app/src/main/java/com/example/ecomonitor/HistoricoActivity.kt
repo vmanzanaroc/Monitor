@@ -168,11 +168,20 @@ class HistoricoActivity : AppCompatActivity() {
     private fun updateUI(mediciones: List<Medicion>) {
         if (mediciones.isNotEmpty()) {
             // Actualizar TextViews con los últimos 5 datos
+
             findViewById<TextView>(R.id.textTA1).text = mediciones.getOrNull(4)?.tempAire.toString()
             findViewById<TextView>(R.id.textTA2).text = mediciones.getOrNull(3)?.tempAire.toString()
             findViewById<TextView>(R.id.textTA3).text = mediciones.getOrNull(2)?.tempAire.toString()
             findViewById<TextView>(R.id.textTA4).text = mediciones.getOrNull(1)?.tempAire.toString()
             findViewById<TextView>(R.id.textTA5).text = mediciones.getOrNull(0)?.tempAire.toString()
+
+            /*
+            findViewById<TextView>(R.id.textTA1).text = mediciones.getOrNull(4)?.tempAire.toString()
+            findViewById<TextView>(R.id.textTA2).text = mediciones.getOrNull(3)?.tempAire.toString()
+            findViewById<TextView>(R.id.textTA3).text = mediciones.getOrNull(2)?.tempAire.toString()
+            findViewById<TextView>(R.id.textTA4).text = mediciones.getOrNull(1)?.tempAire.toString()
+            findViewById<TextView>(R.id.textTA5).text = mediciones.getOrNull(0)?.tempAire.toString()
+            */
 
             findViewById<TextView>(R.id.textHA1).text = mediciones.getOrNull(4)?.humidity.toString()
             findViewById<TextView>(R.id.textHA2).text = mediciones.getOrNull(3)?.humidity.toString()

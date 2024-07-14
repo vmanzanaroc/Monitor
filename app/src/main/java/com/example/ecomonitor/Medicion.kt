@@ -7,5 +7,5 @@ data class Medicion (
     var ph: Double? = null,
     var partAire: Double? = null,
     var humidity: Double? = null,
-
+    var dateTime: String? = null
 )

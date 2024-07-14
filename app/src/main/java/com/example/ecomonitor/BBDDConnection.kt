@@ -46,51 +46,42 @@ class BBDDConnection {
         })
     }
 
+    fun changeNameUsers(email: String, newUsername: String, onComplete: (Boolean) -> Unit) {
+        userRoot(email, "profile")
+        userRef.child("userName").setValue(newUsername)
+            .addOnCompleteListener { task ->
+                onComplete(task.isSuccessful)
+            }
+    }
+
+    fun changeEcosysName(email: String, newEcosysname: String, onComplete: (Boolean) -> Unit) {
+        userRoot(email, "profile")
+        userRef.child("terrario").setValue(newEcosysname)
+            .addOnCompleteListener { task ->
+                onComplete(task.isSuccessful)
+            }
+    }
+
+    fun readProfileData(email: String, onDataChange: (String?, String?) -> Unit) {
+        userRoot(email, "profile")
+        userRef.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val username = snapshot.child("userName").getValue(String::class.java)
+                val ecosystemName = snapshot.child("terrario").getValue(String::class.java)
+                onDataChange(username, ecosystemName)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                println("Failed to read value: ${error.toException()}")
+                onDataChange(null, null)
+            }
+        })
+    }
+
     private fun userRoot(email: String, child: String) {
         val username = email.substringBefore("@")
-        userRef = FirebaseDatabase.getInstance("https://ecomonitor-2024-default-rtdb.europe-west1.firebasedatabase.app")
+        userRef = FirebaseDatabase.getInstance("https://ecomonitor-2024-default-rtdb.europe-west1.firebasedatabase.app/")
             .getReference(username)
             .child(child)
     }
 }
-
-/*
-import android.util.Log
-import com.google.firebase.database.*
-
-class FirebaseDatabaseConnection {
-
-    private val TAG = "FirebaseDatabaseConn"
-    private lateinit var database: FirebaseDatabase
-
-    init {
-        database = FirebaseDatabase.getInstance("https://tu-proyecto.firebaseio.com") // Reemplaza con tu URL de Firebase
-    }
-
-    fun readFromStatic(username: String) {
-        val staticRef = database.reference.child(username).child("static")
-
-        staticRef.addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                for (childSnapshot in snapshot.children) {
-                    val co2 = childSnapshot.child("co2").getValue(Double::class.java)
-                    val tempAire = childSnapshot.child("tempAire").getValue(Double::class.java)
-                    val partAire = childSnapshot.child("partAire").getValue(Double::class.java)
-                    val humidity = childSnapshot.child("humidity").getValue(Double::class.java)
-                    val tempAgua = childSnapshot.child("tempAgua").getValue(Double::class.java)
-                    val ph = childSnapshot.child("ph").getValue(Double::class.java)
-
-                    Log.d(TAG, "CO2: $co2, Temp Aire: $tempAire, Part Aire: $partAire, Humidity: $humidity, Temp Agua: $tempAgua, pH: $ph")
-
-                    // Aquí puedes manejar los valores, por ejemplo, asignarlos a variables globales
-                    // o actualizar la interfaz de usuario
-                }
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                Log.w(TAG, "Error al leer datos estáticos", error.toException())
-            }
-        })
-    }
-}
- */
