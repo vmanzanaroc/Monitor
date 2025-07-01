@@ -12,8 +12,8 @@ android {
         applicationId = "com.example.ecomonitor"
         minSdk = 24
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.2.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -51,6 +51,13 @@ android {
 }
 
 dependencies {
+
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")                                      //graficos de datos
+    implementation("com.google.android.material:material:1.12.0")                                   //estilo grafico para botones y demás
+
+    implementation("com.google.firebase:firebase-messaging:24.1.1")                                 //para el envio de notificaciones
+
+    implementation ("com.android.volley:volley:1.2.1")                                              //para la utilizacion de Arima de prediccion
 
     implementation(platform("com.google.firebase:firebase-bom:32.8.1"))                             //conexion con la prataforma firebase
     implementation("com.google.firebase:firebase-analytics")                                        //conexion con firebase authority

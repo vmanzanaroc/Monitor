@@ -5,226 +5,490 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_9"
+    android:background="#F0F3F4"
     tools:context=".TerrarioActivity">
 
-    <TextView
-        android:id="@+id/tituloMonit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/ecosistemas_background"
-        android:paddingLeft="15dp"
-        android:paddingTop="15dp"
-        android:paddingRight="15dp"
-        android:paddingBottom="15dp"
-        android:text="Variables actuales"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
     <LinearLayout
+        android:id="@+id/shadowFrame"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="20dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:orientation="vertical"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/backEcoSys"
+        android:layout_height="110dp"
+        android:background="#F0F3F4"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tituloMonit">
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/backEcoSys"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="#D5D8DC"
+            android:paddingStart="8dp"
+            android:paddingEnd="16dp"
+            android:text="Volver"
+            android:textAllCaps="true"
+            android:textColor="#000000"
+            app:cornerRadius="20dp"
+            app:icon="?attr/homeAsUpIndicator"
+            app:iconGravity="start"
+            app:iconPadding="6dp"
+            app:iconTint="#000000"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1dp" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="192dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:text="Variables actuales"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="26dp" />
+
+        <Space
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/alertImg"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            app:srcCompat="?android:attr/alertDialogIcon"/>
+
+    </LinearLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="0dp"
+        android:layout_height="612dp"
+        android:fillViewport="false"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:scrollbars="horizontal"
+        android:layout_marginTop="110dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/shadowFrame">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/actuales_background2"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shadowFrame">
 
             <LinearLayout
+                android:id="@+id/LLTempAire"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/textview_border2"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp">
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/actuales_background"
-                    android:orientation="vertical">
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/textTempAire"
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/textview_border"
                         android:gravity="center"
                         android:paddingLeft="5dp"
                         android:paddingRight="5dp"
                         android:text="Temperatura aire (ºC)"
-                        android:textSize="15dp"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textTempAirePred"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/textview_border"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:text="Predicción a 5 minutos"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/txtTempAire"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:gravity="center_horizontal|center_vertical"
                         android:paddingBottom="10dp"
                         android:text="..."
+                        android:textColor="@color/black"
+                        android:textSize="40sp" />
+
+                    <TextView
+                        android:id="@+id/txtTempAirePred"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:paddingBottom="10dp"
+                        android:text="..."
+                        android:textColor="@color/black"
                         android:textSize="40sp" />
 
                 </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LLCO2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/textview_border2"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp">
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/actuales_background"
-                    android:orientation="vertical">
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/textCO2Aire"
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/textview_border"
                         android:gravity="center"
                         android:paddingLeft="5dp"
                         android:paddingRight="5dp"
                         android:text="CO2 aire (ppm)"
-                        android:textSize="15dp"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textCO2AirePred"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/textview_border"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:text="Predicción a 5 minutos"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/txtCO2Aire"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:gravity="center_horizontal|center_vertical"
                         android:paddingBottom="10dp"
                         android:text="..."
+                        android:textColor="@color/black"
                         android:textSize="40sp" />
+
+                    <TextView
+                        android:id="@+id/txtCO2AirePred"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:paddingBottom="10dp"
+                        android:text="..."
+                        android:textColor="@color/black"
+                        android:textSize="40sp" />
+
                 </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/LLHumidity"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/textview_border2"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp">
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/actuales_background"
-                    android:orientation="vertical">
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/textHumAire"
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/textview_border"
                         android:gravity="center"
                         android:paddingLeft="5dp"
                         android:paddingRight="5dp"
-                        android:text="Humedad aire (%)"
-                        android:textSize="15dp"
+                        android:text="Humedad del aire (%)"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textHumAirePred"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/textview_border"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:text="Predicción a 5 minutos"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/txtHumAire"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:gravity="center_horizontal|center_vertical"
                         android:paddingBottom="10dp"
                         android:text="..."
+                        android:textColor="@color/black"
                         android:textSize="40sp" />
 
+                    <TextView
+                        android:id="@+id/txtHumAirePred"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:paddingBottom="10dp"
+                        android:text="..."
+                        android:textColor="@color/black"
+                        android:textSize="40sp" />
 
                 </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LLPartAire"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/textview_border2"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp">
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/actuales_background"
-                    android:orientation="vertical">
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/textPartAire"
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/textview_border"
                         android:gravity="center"
                         android:paddingLeft="5dp"
                         android:paddingRight="5dp"
-                        android:text="Partículas aire (ppb)"
-                        android:textSize="15dp"
+                        android:text="Particulas del aire (ppb)"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textPartAirePred"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/textview_border"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:text="Predicción a 5 minutos"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/txtPartAire"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:gravity="center_horizontal|center_vertical"
                         android:paddingBottom="10dp"
+                        android:textColor="@color/black"
                         android:text="..."
                         android:textSize="40sp" />
+
+                    <TextView
+                        android:id="@+id/txtPartAirePred"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/black"
+                        android:text="..."
+                        android:textSize="40sp" />
+
                 </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/LLTempAgua"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/textview_border2"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp">
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/actuales_background"
-                    android:orientation="vertical">
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/textTempAgua"
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/textview_border"
                         android:gravity="center"
                         android:paddingLeft="5dp"
                         android:paddingRight="5dp"
+                        android:textColor="@color/black"
                         android:text="Temperatura agua (ºC)"
-                        android:textSize="15dp"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/txtTempAgua"
+                        android:id="@+id/textTempAguaPred"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center_horizontal|center_vertical"
-                        android:paddingBottom="10dp"
-                        android:text="..."
-                        android:textSize="40sp" />
+                        android:layout_height="70dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/textview_border"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:textColor="@color/black"
+                        android:text="Predicción a 5 minutos"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -232,48 +496,534 @@
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/actuales_background"
-                    android:orientation="vertical">
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtTempAgua"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/black"
+                        android:text="..."
+                        android:textSize="40sp" />
+
+                    <TextView
+                        android:id="@+id/txtTempAguaPred"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/black"
+                        android:text="..."
+                        android:textSize="40sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LLPHAgua"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/textview_border2"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/textPHAgua"
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/textview_border"
                         android:gravity="center"
                         android:paddingLeft="5dp"
                         android:paddingRight="5dp"
-                        android:text="PH agua"
-                        android:textSize="15dp"
+                        android:textColor="@color/black"
+                        android:text="PH del agua (ph)"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textPHAguaPred"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/textview_border"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:textColor="@color/black"
+                        android:text="Predicción a 5 minutos"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/txtPHAgua"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:gravity="center_horizontal|center_vertical"
                         android:paddingBottom="10dp"
+                        android:textColor="@color/black"
                         android:text="..."
                         android:textSize="40sp" />
+
+                    <TextView
+                        android:id="@+id/txtPHAguaPred"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/black"
+                        android:text="..."
+                        android:textSize="40sp" />
+
                 </LinearLayout>
+
             </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LLRuido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/textview_border2"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textRuido"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/textview_border"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:textColor="@color/black"
+                        android:text="Ruido (dB)"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textRuidoPred"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/textview_border"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:textColor="@color/black"
+                        android:text="Predicción a 5 minutos"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtRuido"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/black"
+                        android:text="..."
+                        android:textSize="40sp" />
+
+                    <TextView
+                        android:id="@+id/txtRuidoPred"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/black"
+                        android:text="..."
+                        android:textSize="40sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LLLuminosidad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/textview_border2"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textLuminosidad"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/textview_border"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:textColor="@color/black"
+                        android:text="Luminosidad (%)"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textLuminosidadPred"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/textview_border"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:textColor="@color/black"
+                        android:text="Predicción a 5 minutos"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtLuminosidad"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/black"
+                        android:text="..."
+                        android:textSize="40sp" />
+
+                    <TextView
+                        android:id="@+id/txtLuminosidadPred"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/black"
+                        android:text="..."
+                        android:textSize="40sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <!--
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/actuales_background2"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/actuales_background"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textTempAire"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:gravity="center"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:text="Temperatura aire (ºC)"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtTempAire"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:paddingBottom="10dp"
+                            android:text="..."
+                            android:textSize="40sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/actuales_background"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textCO2Aire"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:gravity="center"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:text="CO2 aire (ppm)"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtCO2Aire"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:paddingBottom="10dp"
+                            android:text="..."
+                            android:textSize="40sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/actuales_background"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textHumAire"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:gravity="center"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:text="Humedad aire (%)"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtHumAire"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:paddingBottom="10dp"
+                            android:text="..."
+                            android:textSize="40sp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/actuales_background"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textPartAire"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:gravity="center"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:text="Partículas aire (ppb)"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtPartAire"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:paddingBottom="10dp"
+                            android:text="..."
+                            android:textSize="40sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/actuales_background"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textTempAgua"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:gravity="center"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:text="Temperatura agua (ºC)"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtTempAgua"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:paddingBottom="10dp"
+                            android:text="..."
+                            android:textSize="40sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/actuales_background"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textPHAgua"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:gravity="center"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:text="PH agua"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtPHAgua"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:paddingBottom="10dp"
+                            android:text="..."
+                            android:textSize="40sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+            -->
 
         </LinearLayout>
 
-    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
+    <!--
     <Button
         android:id="@+id/backEcoSys"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/ecosistemas_background"
         android:text="@string/volver"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+    -->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

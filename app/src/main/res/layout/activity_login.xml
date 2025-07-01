@@ -5,15 +5,18 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:visibility="visible"
+    android:background="@color/blancohueso"
     tools:context=".LoginActivity">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:alpha="0.3"
-        android:background="@drawable/fondo"
-        />
+    <!--    <View-->
+    <!--        android:layout_width="283dp"-->
+    <!--        android:layout_height="286dp"-->
+    <!--        android:background="@drawable/icono_ecomonitor"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.498" />-->
 
     <TextView
         android:id="@+id/textView"
@@ -76,10 +79,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="0dp"
-                android:background="@drawable/custom_bttn2"
+                android:backgroundTint="@color/azul"
                 android:text="Registrar usuario"
                 android:textColor="#000000"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                app:strokeWidth="1dp" />
 
             <Space
                 android:layout_width="20dp"
@@ -89,10 +93,11 @@
                 android:id="@+id/login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/custom_bttn"
+                android:backgroundTint="@color/azul"
                 android:text="Iniciar sesión"
                 android:textColor="#000000"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                app:strokeWidth="1dp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -111,10 +116,12 @@
             android:layout_width="146dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="0dp"
-            android:background="@drawable/custom_button3"
+            android:backgroundTint="@color/azul"
             android:text="SALIR"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold" />
+            android:textColor="#000000"
+            android:textStyle="bold"
+            app:strokeWidth="1dp" />
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

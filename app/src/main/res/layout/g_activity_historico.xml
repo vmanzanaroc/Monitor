@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center|center_horizontal|center_vertical"
+    android:background="#F0F3F4"
+    tools:context=".AirTempGraphicActivity">
+
+
+    <!--
+    <Spinner
+        android:id="@+id/spinnerOpcionesGrafica"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_margin="16dp"
+        android:longClickable="false"
+        android:spinnerMode="dropdown"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/LayoutGraficas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.111" />
+    -->
+
+    <LinearLayout
+        android:id="@+id/shadowFrame"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="#F0F3F4"
+        android:elevation="10dp"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+
+        <!--
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/backEcoSys1"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="124dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="Volver"
+            android:textColor="#000000"
+            app:icon="?attr/homeAsUpIndicator"
+            app:iconTint="#000000"
+            tools:layout_editor_absoluteX="147dp"
+            tools:layout_editor_absoluteY="16dp" />
+        -->
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/backEcoSys"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="#D5D8DC"
+            android:paddingStart="8dp"
+            android:paddingEnd="16dp"
+            android:text="Volver"
+            android:textAllCaps="true"
+            android:textColor="#000000"
+            app:cornerRadius="20dp"
+            app:icon="?attr/homeAsUpIndicator"
+            app:iconGravity="start"
+            app:iconPadding="6dp"
+            app:iconTint="#000000"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1dp" />
+
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/configButton"
+            android:layout_width="56dp"
+            android:layout_height="46dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="15dp"
+            android:background="#00A02323"
+            android:focusableInTouchMode="false"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/engranaje"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="90dp"
+        android:gravity="center|center_vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LayoutGraficas"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="1dp">
+
+
+        <TextView
+            android:id="@+id/whenGraphickClicked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pulsa en la gráfica para ver valores"
+            android:textAlignment="center"
+            android:textColor="#767676"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!--            <ImageButton-->
+        <!--                android:id="@+id/infoButtonGrafico"-->
+        <!--                android:layout_width="30dp"-->
+        <!--                android:layout_height="30dp"-->
+        <!--                android:layout_gravity="center_vertical"-->
+        <!--                android:layout_marginLeft="15dp"-->
+        <!--                android:background="#00A02323"-->
+        <!--                android:focusableInTouchMode="false"-->
+        <!--                android:scaleType="fitCenter"-->
+        <!--                app:srcCompat="@drawable/informacion"-->
+        <!--                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />-->
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LayoutGraficas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:layout_marginTop="90dp"
+        android:layout_marginBottom="120dp"
+        android:gravity="center|top"
+        android:orientation="vertical"
+        android:paddingTop="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="384dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/infoButtonGrafico"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="20dp"
+                android:background="#00A02323"
+                android:focusableInTouchMode="false"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/informacion"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+            <LinearLayout
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewValorSeleccionado"
+                    android:layout_width="165dp"
+                    android:layout_height="wrap_content"
+                    android:text="Valor: "
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewHoraSeleccionada"
+                    android:layout_width="165dp"
+                    android:layout_height="wrap_content"
+                    android:text="Hora: "
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/TempAireGrafico"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTintMode="multiply"
+            android:elevation="4dp"
+            android:padding="8dp" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/TempAguaGrafico"
+            android:layout_width="374dp"
+            android:layout_height="460dp"
+            android:layout_marginTop="10dp"
+            android:elevation="4dp"
+            android:padding="8dp"
+            android:visibility="gone" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/CO2Grafico"
+            android:layout_width="374dp"
+            android:layout_height="460dp"
+            android:layout_marginTop="10dp"
+            android:elevation="4dp"
+            android:padding="8dp"
+            android:visibility="gone" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/PHGrafico"
+            android:layout_width="374dp"
+            android:layout_height="460dp"
+            android:layout_marginTop="10dp"
+            android:elevation="4dp"
+            android:padding="8dp"
+            android:visibility="gone" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/PartAireGrafico"
+            android:layout_width="374dp"
+            android:layout_height="460dp"
+            android:layout_marginTop="10dp"
+            android:elevation="4dp"
+            android:padding="8dp"
+            android:visibility="gone" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/HumidityGrafico"
+            android:layout_width="374dp"
+            android:layout_height="460dp"
+            android:layout_marginTop="10dp"
+            android:elevation="4dp"
+            android:padding="8dp"
+            android:visibility="gone" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/RuidoGrafico"
+            android:layout_width="374dp"
+            android:layout_height="460dp"
+            android:layout_marginTop="10dp"
+            android:elevation="4dp"
+            android:padding="8dp"
+            android:visibility="gone" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/LuminosidadGrafico"
+            android:layout_width="374dp"
+            android:layout_height="460dp"
+            android:layout_marginTop="10dp"
+            android:elevation="4dp"
+            android:padding="8dp"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="ExtraText">
+
+        <!-- Sombra arriba: View con fondo degradado -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@drawable/sombra_arriba" />>
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScroll"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:fillViewport="true"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/toggleGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="#F0F3F4"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                app:selectionRequired="true"
+                app:singleSelection="true"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="671dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_soundIntensity"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Ruido"
+                    android:visibility="visible"
+                    app:cornerRadius="14dp"
+                    app:icon="@drawable/humedad"
+                    app:iconGravity="top"
+                    app:iconSize="30dp"
+                    app:iconTint="#000000"
+                    android:backgroundTint="@color/btn_background_tint_selector"
+                    android:textColor="#000000"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_ligthIntensity"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Luminosidad"
+                    android:visibility="visible"
+                    app:cornerRadius="14dp"
+                    app:icon="@drawable/humedad"
+                    app:iconGravity="top"
+                    app:iconSize="30dp"
+                    app:iconTint="#000000"
+                    android:backgroundTint="@color/btn_background_tint_selector"
+                    android:textColor="#000000"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_tempAire"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Temp aire"
+                    android:visibility="visible"
+                    app:cornerRadius="14dp"
+                    app:icon="@drawable/temp_aire"
+                    app:iconGravity="top"
+                    app:iconSize="30dp"
+                    app:iconTint="#000000"
+                    android:backgroundTint="@color/btn_background_tint_selector"
+                    android:textColor="#000000"/>
+
+<!--                <TextView-->
+<!--                    android:id="@+id/textView4"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:text="HumidityGrafico" />-->
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_co2"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Co2 aire"
+                    android:visibility="visible"
+                    app:cornerRadius="14dp"
+                    app:icon="@drawable/co2"
+                    app:iconGravity="top"
+                    app:iconSize="30dp"
+                    app:iconTint="#000000"
+                    android:backgroundTint="@color/btn_background_tint_selector"
+                    android:textColor="#000000"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_tempAgua"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Temp agua"
+                    android:visibility="visible"
+                    app:cornerRadius="14dp"
+                    app:icon="@drawable/temp_agua"
+                    app:iconGravity="top"
+                    app:iconSize="30dp"
+                    app:iconTint="#000000"
+                    android:backgroundTint="@color/btn_background_tint_selector"
+                    android:textColor="#000000"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_PH"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="PH agua"
+                    android:visibility="visible"
+                    app:cornerRadius="14dp"
+                    app:icon="@drawable/ph"
+                    app:iconGravity="top"
+                    app:iconSize="30dp"
+                    app:iconTint="#000000"
+                    android:backgroundTint="@color/btn_background_tint_selector"
+                    android:textColor="#000000"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_partAire"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Part aire"
+                    android:visibility="visible"
+                    app:cornerRadius="14dp"
+                    app:icon="@drawable/particulas"
+                    app:iconGravity="top"
+                    app:iconSize="30dp"
+                    app:iconTint="#000000"
+                    android:backgroundTint="@color/btn_background_tint_selector"
+                    android:textColor="#000000"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_humidity"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Humedad"
+                    android:visibility="visible"
+                    app:cornerRadius="14dp"
+                    app:icon="@drawable/humedad"
+                    app:iconGravity="top"
+                    app:iconSize="30dp"
+                    app:iconTint="#000000"
+                    android:backgroundTint="@color/btn_background_tint_selector"
+                    android:textColor="#000000"/>
+
+
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        </HorizontalScrollView>
+
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

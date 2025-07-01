@@ -2,7 +2,7 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_checked="false">
         <shape android:shape="rectangle">
-            <solid android:color="#85c1e9"/> <!-- Color de fondo cuando está inactivo -->
+            <solid android:color="#5DADE2"/> <!-- Color de fondo cuando está inactivo -->
             <stroke
                 android:width="1dp"
                 android:color="#000000"/> <!-- Borde oscuro -->

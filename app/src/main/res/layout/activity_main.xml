@@ -6,24 +6,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animationCache="false"
-    android:background="@drawable/fondo"
+    android:background="#f3f0f4"
     android:clickable="false"
     tools:context=".MainActivity">
 
+    <View
+        android:layout_width="283dp"
+        android:layout_height="286dp"
+        android:background="@drawable/icono_ecomonitor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="271dp"
         android:layout_height="69dp"
-        android:layout_marginTop="216dp"
-        android:background="#BFB4CFBD"
+        android:layout_marginTop="68dp"
         android:text="@string/ecomonitor"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
@@ -31,15 +38,17 @@
     <Button
         android:id="@+id/button"
         android:layout_width="117dp"
-        android:layout_height="46dp"
+        android:layout_height="60dp"
         android:layout_marginTop="200dp"
-        android:background="@drawable/checkbox_background"
+        android:backgroundTint="@color/gris"
         android:text="@string/entrar"
         android:textColor="#000000"
         android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.64"
+        app:strokeWidth="1dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
